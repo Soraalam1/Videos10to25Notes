@@ -1,0 +1,159 @@
+RESTFUL Microservices
+
+Spring - Loosely coupled components
+Microservices - Loosely coupled services
+The two fit together very well
+
+Thymeleaf - marries HTML files with Java classes
+
+DTO (Lombok???) generates getters and setters for you (@Data annotation)
+
+GetMapping is faster than RequestMapping (wow big shocker who knew!!!!!)
+
+@PostMapping(consumes="application/json", produces "application/json"), that's new
+those new things are httpHeaders
+
+-----JavaDoc
+
+It's a consistent way to document APIs
+
+You can put it above a class or a method.
+
+Written right in the class through comments
+
+Java docs are formated with HTML tags and specified tags,
+80 char max length per line
+and commented out multiline
+
+Tags: @author, @version, @param, @return, @exception, @see, @sing, @serial, 
+@deprecated
+
+The Javadoc tool can create the documentation from your comments
+
+-----Branches and Git 
+
+You can hit the plus on github to the left of code to comment on peoples code
+
+-------Debugging
+
+You can reset the branch to a previous commit, but it is read only, use it to time
+travel in the code
+
+Marking breakpoints is for the debugger
+
+Debugging is a very important tool, learn to use intelliJ debugger
+
+You can change values of a running application real time
+
+----------Testing
+
+A unit test is like a code review on your own code
+
+Unit tests are not supposed to be too much work, if it is maybe your code is not
+effecient
+
+Regression testing checks if new code affects old code
+
+Test Driven Design - Write the test first instead of last
+
+Waterfall approach is code first test before rolling out, causes testing to be
+rushed or skipped
+
+Behavior driven design - Think of the user first and what they want it to do as the
+first step in the process
+
+Mocks allow us avoid dependencies that make Unit Testing too httpHeaders
+
+Cucumber is for human readable tests
+
+CI/CD - Code coverage/run tests automatically
+
+UI Tests - endpoint or UI to expected response, they can be brittle because things
+always change. To avoid that, just make it what you see.
+
+Integration tests - input --> output (endpoint and its results). Kind of brittle.
+
+Unit Test - 1 individual class, most important test
+
+Mocking - can use a mock() method to make up objects
+
+car = mock(car.class)
+
+-----Behavior Driven Design
+
+As a [] I want [] so that I can []
+
+Unit tests that match Given, When, Then.
+
+By moving testing first, we ensure that testing happens. 
+
+1. Start with requirements document
+2. Elaborate into examples
+3. Write unit tests
+4. Run test, fail (on purpose)
+5. Build classes
+6. Run test, pass
+
+-------Test Driven Design
+
+@SpringBootTest can go above the class
+
+It is common to have long verbose method names for unit tests, its ok.
+
+need to use asserts to decide if the tests are passing or failing
+
+There is a fail() method to force a test to fail
+
+Mokito.when().thenReturn()
+
+---------CI/CD Pipelines
+
+Circle CI has a config.yml
+
+you should be able to save and reuse them in different scenarios
+
+You can connect CircleCI to github
+
+A pipeline takes committed code and runs it through steps, and if everything
+passes we could do continuious deployment/delivery.
+
+
+6 Principles of CD
+-Simplicity
+-Manifesto for Agile Software Development
+-Iterative, Incremental Development,
+-Lean Management
+-Estimation accuracy
+
+------Autowired
+
+-yet another example of polymorphism
+
+-------Lists
+
+The bigger a list, the more time it takes to iterate over it
+
+HashMap is a key value pair
+
+HashSet determines where a value lives in the collection
+
+An algorithm can point us to the right addresses without iterating through
+the whole set
+
+----------HashMap in DAO 
+
+-A HashMap or HashSet would be a bit faster to retrieve objects from than an
+ArrayList
+
+----------Thymeleaf
+
+Put thymleaf in the HTML tag <html xmlns:th="http://www.thymeleaf.org">
+
+it will add th: attributes to HTML tags. Kind of reminds me of property 
+binding in angular. (th library)
+
+If we add (Model model) to the parameter, we can then use model.addAttribute()
+to model an object for the HTML page
+
+*{} looks at an attribute of the object in the html tags 
+
